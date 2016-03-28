@@ -11,9 +11,14 @@ function isNum(num){
         alert("输入的内容只能包含数字、中文、英文");
         return false;
     }
+    else if(num==""){
+        alert("无法输入空数据");
+        return false;
+    }
     else{
         return true;
     }
+
 
 }
 function leftIn(){

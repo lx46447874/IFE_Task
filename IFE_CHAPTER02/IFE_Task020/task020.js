@@ -7,11 +7,12 @@
  */
 function isNum(num){
     var reg = new RegExp("[^\n\r\s 、,，0-9A-Za-z\u4e00-\u9fa5]");
+    var regBlank = new RegExp("^[\n\r\s ,，、]*$");
     if(reg.test(num)){
         alert("输入的内容只能包含数字、中文、英文");
         return false;
     }
-    else if(num==""){
+    else if(regBlank.test(num)){
         alert("无法输入空数据");
         return false;
     }

@@ -8,17 +8,15 @@
 }
 
 #conso{
-    height: 100px;
     border: 1px solid;
     background-color: #418c59;
     position: relative;
 }
 
 #graph{
-    height: 400px;
+    overflow: hidden;
     background-color: #72b16a;
-    padding-top: 100px;
-    padding-left:100px;
+    padding:50px 50px 80px 50px;
 }
 
 .item{

@@ -9,6 +9,7 @@
 function show(){
     var arr = stack;
     var i=0
+    arr[i].style.backgroundColor = "#0f0";
     var myanim = setInterval(function(){
         if(i==arr.length-1){
             arr[i].style.backgroundColor = "#fff";

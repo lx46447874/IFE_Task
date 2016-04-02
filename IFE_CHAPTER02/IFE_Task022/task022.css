@@ -1,0 +1,46 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+
+div{
+    border: 1px solid;
+}
+
+#container{
+    width:1000px;
+    height: 600px;
+    border: hidden;
+}
+[class*=tree]{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+}
+.tree-root{
+    width:800px;
+    height:200px;
+}
+.tree-node2{
+    width:300px;
+    height:100px;
+}
+.tree-node3{
+    width:100px;
+    height:50px;
+}
+.tree-leaf{
+    width:30px;
+    height:30px;
+}
+[id*=btn]{
+    width:200px;
+    height: 50px;
+    margin: 10px;
+    font:20px "黑体";
+    border-radius: 10px;
+    background-color: chartreuse;
+}

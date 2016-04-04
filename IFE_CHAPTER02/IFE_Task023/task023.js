@@ -63,10 +63,12 @@ function show(index, node){
  */
 var dfsResult=[];
 function dfs(currNode){
-    for(var i=0; i<currNode.children.length; i++){
-        dfs(currNode.children[i]);
+    if(currNode){
+        for(var i=0; i<currNode.children.length; i++){
+            dfs(currNode.children[i]);
+        }
+        dfsResult.push(currNode);//入队后构成访问序列
     }
-    dfsResult.push(currNode);//入队后构成访问序列
 }
 /**
  * BFS
@@ -78,17 +80,16 @@ function bfs(curNode){
     var node  = bfsStack.shift();
     while (node){
         for(var i=0; i<node.children.length; i++){
-            bfsStack.push(node.children[i]);//入队后构成访问序列
+            bfsStack.push(node.children[i]);
         }
-        bfsResult.push(node);
-        console.log(node);
+        bfsResult.push(node);//入队后构成访问序列
         node = bfsStack.shift();
     }
 }
 function init(){
     var node = document.getElementsByClassName("tree-root")[0];
     document.querySelector("#btn-dfs").addEventListener("click",function(){show(0,node);});
-    document.querySelector("#btn-bfs").addEventListener("click",function(){show(1),node;});
+    document.querySelector("#btn-bfs").addEventListener("click",function(){show(1,node);});
     document.querySelector("#btn-dfs-search").addEventListener("click",function(){show(2,node);});
     document.querySelector("#btn-bfs-search").addEventListener("click",function(){show(3,node);});
 }

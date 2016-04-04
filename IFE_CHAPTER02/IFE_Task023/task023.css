@@ -1,0 +1,47 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+
+div{
+    border: 1px solid;
+}
+
+#container{
+    width:1000px;
+    height: 600px;
+    border: hidden;
+}
+div{
+    margin:10px;
+    padding:20px;
+}
+[class*=tree]{
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+}
+.tree-root{
+    width:1200px;
+    height:500px;
+}
+
+[id*=btn]{
+    width:150px;
+    height: 50px;
+    margin: 10px;
+    font:20px "黑体";
+    border-radius: 10px;
+    background-color: chartreuse;
+}
+#input-box{
+    width:150px;
+    height:50px;
+    margin:10px;
+    text-align: center;
+    border-radius: 10px;
+    font:10px "黑体" ;
+}

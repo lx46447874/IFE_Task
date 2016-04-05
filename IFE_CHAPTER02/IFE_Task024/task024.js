@@ -90,11 +90,42 @@ function bfs(curNode){
         node = bfsStack.shift();
     }
 }
+
+/**
+ * 改变选中元素的颜色
+ */
+var selected = null;
+function select(){
+    var target = event.target;
+    reset();
+    target.style.background = "#f00";
+    selected = target;
+}
+/**
+ * 删除节点
+ */
+function delnode(){
+    var parent = selected.parentNode;
+    parent.removeChild(selected);
+}
+/**
+ * 添加节点
+ */
+function addnode(){
+    var input = document.querySelector("#input-add").value;
+    var newnode = document.createElement("div");
+    newnode.className = "tree-leaf";
+    newnode.innerHTML = input;
+    selected.appendChild(newnode);
+}
 function init(){
     var node = document.getElementsByClassName("tree-root")[0];
     document.querySelector("#btn-dfs").addEventListener("click",function(){show(0,node);});
     document.querySelector("#btn-bfs").addEventListener("click",function(){show(1,node);});
     document.querySelector("#btn-dfs-search").addEventListener("click",function(){show(2,node);});
     document.querySelector("#btn-bfs-search").addEventListener("click",function(){show(3,node);});
+    document.querySelector(".tree-root").addEventListener("click",select);
+    document.querySelector("#btn-del").addEventListener("click",delnode);
+    document.querySelector("#btn-add").addEventListener("click",addnode);
 }
 init();

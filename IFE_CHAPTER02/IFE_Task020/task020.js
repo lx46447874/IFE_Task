@@ -27,7 +27,7 @@ function leftIn(){
     console.log(text);
     if(isNum(text))
     {
-        var textArr = text.split(/[\s\r\n、,，]+/);
+        var textArr = text.trim().split(/[\s\r\n、,，]+/);
         for(var i=0; i<textArr.length; i++){
             var textNode = document.createTextNode(textArr[i]);
             var divNode = document.createElement("div");
@@ -44,7 +44,7 @@ function  rightIn(){
     var text = document.getElementById("myInput").value;
     if(isNum(text))
     {
-        var textArr = text.split(/[\s\r\n、,，]+/);
+        var textArr = text.trim().split(/[\s\r\n、,，]+/);
         for(var i=0; i<textArr.length; i++){
             var textNode = document.createTextNode(textArr[i]);
             var divNode = document.createElement("div");

@@ -51,7 +51,7 @@ function show(index, node){
             if(nodeVal==goal){
                 arr[i].style.backgroundColor = "#f00";
             }
-            if(goal && i==arr.length-1){
+            if(goal && i==arr.length-1 && nodeVal !=goal){
                 alert("未找到所输入的值："+ goal);
             }
         }

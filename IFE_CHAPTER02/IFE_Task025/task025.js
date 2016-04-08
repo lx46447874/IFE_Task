@@ -21,10 +21,9 @@ function reset(){
 function find(){
     reset();
     dfs(rootNode);
-    console.log("not find");
     var goal = document.querySelector("#input-box").value;
     var reg = new RegExp(goal);
-    for(var i=0; i<dfsResult.length; i++){
+    for(var i=0; i<dfsResult.length; i++) {
         /*
          对nodeValue取值的解释：
          nodeValue = 第i个div孩子.第一个p元素.文本节点.文本节点值
@@ -35,27 +34,43 @@ function find(){
          </div>
          */
         var nodeValue = dfsResult[i].children[0].childNodes[1].nodeValue;
-        if(reg.test(nodeValue)){
-            //·········dfsResult[i].children[0].classList.add("find");
-            //·········dfsResult[i].children[0].children[0].classList.add("find");
-            dfsResult[i].children[0].style.background = "#0f0";//p文本染色
-            dfsResult[i].children[0].children[0].style.background = "#0f0";//p内最开始的+ -标志符号染色
-            //回溯，做两件事：1.显示本节点和同级兄弟节点 2.展开父节点
-            for(var node=dfsResult[i], flag=true ; node ; node=node.parentNode){
-                //1.显示本节点和同级兄弟节点
-                if(flag){
-                    for(var j=0, nodeBro=node.parentNode.children; j<nodeBro.length; j++){
-                        nodeBro[j].classList.remove("unselectTag");
-                    }
-                    flag = false;
-                }
-                //2.展开父节点
-                node.parentNode.classList.remove("unselectTag");
-                node.children[0].childNodes[0].innerHTML = "-";//改为展开的logo
-            }
+        if (reg.test(nodeValue)) {
+            var node = dfsResult[i];
         }
     }
-    console.log("not find");
+
+    if(node){
+        node.children[0].style.background = "#0f0";//p文本染色
+        node.children[0].children[0].style.background = "#0f0";//p内最开始的+ -标志符号染色
+        //回溯，做两件事：1.显示本节点和同级兄弟节点 2.【展开】父节点，【显示】父节点的兄弟节点
+        //1.显示本节点和同级兄弟节点
+        for(var j=0, nodeBro=node.parentNode.children; j<nodeBro.length; j++){
+            nodeBro[j].classList.remove("unselectTag");
+        }
+        //2.【展开】父节点，【显示】父节点的兄弟节点
+        node.parentNode.classList.remove("unselectTag");
+        node.children[0].childNodes[0].innerHTML = "-";//改为展开的logo -
+
+        //被搜索的节点是node，node的父节点是father
+        var father = node.parentNode;
+        //这里用father.parentNode.children表示node的父节点的兄弟节点数组
+        //根节点不在此循环内处理
+        while(father && father.parentNode){
+            var fatherBro = father.parentNode.children;
+            for(var i=0; i<fatherBro.length; i++){
+                fatherBro[i].classList.remove("unselectTag");
+            }
+            father = father.parentNode;
+        }
+        //根节点做特殊处理，凡是能找到某结点，则根节点必为展开状态
+        var rootSpan = document.querySelector(".tree-root").children[0].children[0];
+        console.log(rootSpan.innerHTML);
+        rootSpan.innerHTML="-";
+    }
+    //未找到节点
+    else{
+        alert("未找到 "+goal+" !");
+    }
 }
 /**
  *DFS
@@ -109,6 +124,7 @@ function mytoggle(){
             }
         }
         flag ? tag.innerHTML = "-" : tag.innerHTML = "+";
+
         for(var i=0; i<divList.length; i++) {
             if(tag.innerHTML == "-"){
                 //logo是“ - ”号，则子元素应是 显示 状态
@@ -119,7 +135,6 @@ function mytoggle(){
                 divList[i].classList.add("unselectTag");
             }
         }
-
     }
 }
 /**

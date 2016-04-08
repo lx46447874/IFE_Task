@@ -1,0 +1,73 @@
+
+*{
+    margin:0;
+    padding:0;
+}
+
+#container{
+    width:1000px;
+    position: relative;
+    min-height: 400px;
+}
+div{
+
+    padding:20px;
+}
+#console{
+    width:250px;
+    height:400px;
+    position: absolute;
+    top:20px;
+    right:50px;
+}
+[class*=tree]{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: stretch;
+    flex-wrap: wrap;
+    background-color: #ffffff;
+    border-left: 1px dotted #0000ff;
+}
+.tree-root{
+    width:600px;
+    border-right: 1px solid;
+    border-left: none;
+}
+
+[id*=btn]{
+    width:200px;
+    height: 50px;
+    margin: 10px;
+    font:20px "黑体";
+    border-radius: 10px;
+    background-color: chartreuse;
+}
+[id*=input]{
+    width:200px;
+    height:50px;
+    margin:10px;
+    text-align: center;
+    border-radius: 10px;
+    font:20px "黑体" ;
+}
+p{
+    height:30px;
+    position: relative;
+}
+span{
+    margin-right: 10px;
+    padding:5px 10px 5px 10px;
+    border: 1px solid;
+    position: relative;
+    top:7px;
+}
+.selectTag{
+
+}
+.unselectTag{
+    display: none;
+}
+.find{
+    background-color: #0f0;
+}

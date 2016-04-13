@@ -1,0 +1,41 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.item {
+    margin:10px;
+}
+
+.alert_required{
+    color: #c6caca;
+}
+.alert_wrong{
+    color: #ff0000;
+    border-color: #f00;
+}
+.alert_correct{
+    color: #00ff00;
+    border-color: #00ff00;
+}
+
+input{
+    margin:10px;
+    height:30px;
+    width:200px;
+}
+[class*=btn]{
+    width:280px;
+    height: 50px;
+    margin: 10px;
+    font:20px "黑体";
+    border-radius: 10px;
+    background-color: chartreuse;
+}
+[id*=alert]{
+    padding-left: 10px;
+}
+[id*=alert] span{
+    color: #c6caca;
+    visibility:hidden;
+}

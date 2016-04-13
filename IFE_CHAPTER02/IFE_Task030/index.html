@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task030</title>
+    <link rel="stylesheet" type="text/css" href="task029.css">
+</head>
+<body>
+<form action="submitpage.htm"  method="post">
+    <table>
+        <tr>
+            <td >名称: </td>
+            <td><input id="input-name" type="text"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="alert1"><span>必填，长度为4-16个字符</span></td>
+        </tr>
+        <tr>
+            <td>密码: </td>
+            <td><input id="input-secret" type="text"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="alert2"><span>请输入密码</span></td>
+        </tr>
+        <tr>
+            <td>密码确认: </td>
+            <td><input id="input-secret-confirm" type="text"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="alert3"><span>再次输入相同密码</span></td>
+        </tr>
+        <tr>
+            <td>邮箱: </td>
+            <td><input id="input-mail" type="text"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="alert4"><span>请输入邮箱</span></td>
+        </tr>
+        <tr>
+            <td>手机: </td>
+            <td><input id="input-phone" type="text"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td id="alert5"><span>请输入手机号码</span></td>
+        </tr>
+
+
+    </table>
+    <td><input class="btn" type="button" value="验证"></td>
+</form>
+</body>
+<script type="text/javascript" src="formvalidate.js"></script>
+</html>

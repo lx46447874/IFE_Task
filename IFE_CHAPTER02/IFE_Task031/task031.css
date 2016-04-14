@@ -1,0 +1,30 @@
+*{
+    margin:0;
+    padding:0;
+}
+
+.container{
+    font: 20px "黑体";
+}
+
+.rad{
+    margin:100px 0 20px 100px;
+}
+
+.sel{
+    margin:0 0 0 100px;
+}
+.input-notstu{
+    margin:0 0 0 100px;
+}
+
+#sel1{
+    width:50px;
+}
+#sel2{
+    width:150px;
+}
+
+.hide-element{
+    display: none;
+}

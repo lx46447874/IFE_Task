@@ -1,0 +1,40 @@
+1.参考task017 对radio的事件绑定需要循环给每个radio绑定事件
+2.参考代码
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>Untitled Document</title>
+    <script>
+        function setSecond(obj){
+            var val = obj.value;
+            console.log(val);
+            if(val == 'en'){
+                var sec = document.getElementById('second');
+                sec.options[0] = new Option("one","one");
+                sec.options[1] = new Option("two","two");
+            }else{
+                var sec = document.getElementById('second');
+                sec.options[0] = new Option("一","one");
+                sec.options[1] = new Option("二","two");//可设置循环配置，也可一个一个配置
+            }
+        }
+    </script>
+</head>
+
+<body>
+<div>
+    <select id="first" onchange="setSecond(this)">
+        <option value="en">en</option>
+        <option value="zh">zh</option>
+    </select>
+</div>
+<div>
+    <select id="second">
+
+    </select>
+</div>
+</body>
+</html>

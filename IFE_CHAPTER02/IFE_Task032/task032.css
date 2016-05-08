@@ -1,0 +1,21 @@
+*{
+    margin:0;
+    padding:10px;
+}
+.alert_required{
+    color: #c6caca;
+}
+.alert_wrong{
+    color: #ff0000;
+    border-color: #f00;
+}
+.alert_correct{
+    color: #00ff00;
+    border-color: #00ff00;
+}
+[id*=btn]{
+    width:100px;
+    height: 50px;
+    font:15px "黑体";
+    border-radius: 10px;
+}
